@@ -14,6 +14,7 @@ ALLOWED_CLASSIFIERS = [
     'DecisionTreeRegressor',
     'RandomForestClassifier',
     'RandomForestRegressor',
+    'GradientBoostingRegressor',
     'GaussianNB',
     'LogisticRegression',
     'PCA',

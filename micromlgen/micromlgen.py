@@ -6,6 +6,7 @@ from micromlgen.decisiontreeclassifier import is_decisiontree, port_decisiontree
 from micromlgen.decisiontreeregressor import is_decisiontree_regressor, port_decisiontree_regressor
 from micromlgen.randomforestclassifier import is_randomforest, port_randomforest
 from micromlgen.randomforestregressor import is_randomforest_regressor, port_randomforest_regressor
+from micromlgen.gradientboostingregressor import is_gradientboosting_regressor, port_gradientboosting_regressor
 from micromlgen.logisticregression import is_logisticregression, port_logisticregression
 from micromlgen.gaussiannb import is_gaussiannb, port_gaussiannb
 from micromlgen.pca import is_pca, port_pca
@@ -50,4 +51,6 @@ def port(
         return port_decisiontree_regressor(**locals(), **kwargs)
     elif is_randomforest_regressor(clf):
         return port_randomforest_regressor(**locals(), **kwargs)
+    elif is_gradientboosting_regressor(clf):
+        return port_gradientboosting_regressor(**locals(), **kwargs)
     raise TypeError('clf MUST be one of %s' % ', '.join(platforms.ALLOWED_CLASSIFIERS))
